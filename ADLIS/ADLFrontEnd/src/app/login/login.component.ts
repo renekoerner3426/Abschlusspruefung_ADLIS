@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PassDataService } from '../pass-data.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   userPassword: string ;
   warningVisible: boolean = false;
 
-  constructor() { 
+  constructor(private ds: PassDataService) { 
   }
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   public checkData() {
     if(this.userName == "admin" && this.userPassword == "admin") {
+      this.sendData();
       this.correctData = true;
       return true;
     } else {
@@ -32,5 +34,9 @@ export class LoginComponent implements OnInit {
     if(!this.checkData()) {
       this.warningVisible = true;
     }
+  }
+
+  sendData(){
+    this.ds.sendFin(this.userName);
   }
 }
