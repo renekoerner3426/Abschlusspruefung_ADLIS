@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adlbackend
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: adlbackend
+  template:
+    metadata:
+      labels:
+        app: adlbackend
+    spec:
+      containers:
+        - name: adlbackend
+          image: f73-g2.cloudogu.net/achilles/adlbackend
+          ports:
+            - name: http
+              containerPort: 8081
+          env:
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: adl-secret
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: adl-secret
+                  key: password
+            - name: MONGO_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: adl-secret
+                  key: database
+            - name: MONGO_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: adl-secret
+                  key: host
+            - name: DATA_SERVICE_IP
+              value: 10.103.249.73
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adlbackendService
+  namespace: default
+  labels:
+    app: adlbackend
+spec:
+  selector:
+    app: adlbackend
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8081
+      targetPort: 8081

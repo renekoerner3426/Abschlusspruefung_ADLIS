@@ -1,0 +1,64 @@
+
+
+<!-- Main Content -->
+<div class="window">
+    <div class="welcomeDiv">
+        <p>Willkommen im ALDIS! Überwachen Sie Ihre Autodaten.</p>
+    </div>
+
+    <!-- ADL -->
+    <div class="tableDiv">
+       
+        <!-- ADL table -->
+        <div *ngIf="adlRecords.length > 0; else elseBlock">
+            <h2>Einträge</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>FIN</th>
+                        <th>GPS-Position</th>
+                        <th>Zahl der elektromotorischen Gurtstraffungen</th>
+                        <th>Betriebsstunden der Fahrzeugbeleuchtung</th>
+                        <th>Kilometerstand</th>
+                        <th>Tankfüllung</th>
+                        <th>Reifendruck</th>
+                        <th>Füllstand Kühlmittel</th>
+                        <th>Füllstand Bremsflüssigkeit</th>
+                        <th>Füllstand Wischwasser</th>
+                        <th>Gefahrene Kilometer Autobahn</th>
+                        <th>Gefahrene Kilometer Landstraße</th>
+                        <th>Gefahrene Kilometer Stadt</th>
+                        <th>Temperatur</th>
+                        <th>Zahl der Verstellvorgänge des elektrischen Fahrersitzes</th>
+                        <th>Anzahl der eingelegten Medien des CD-/DVD-Laufwerks</th>
+                        <th>Lade- und Entladezyklen der Starterbatterie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let adlRecord of adlRecords; index as index">
+                        <td>{{ adlRecord.fin }}</td>
+                        <td>{{ adlRecord.gps }}</td>
+                        <td>{{ adlRecord.electromotiveBeltTensionings }}</td>
+                        <td>{{ adlRecord.vehicleIlluminationHours }}</td>
+                        <td>{{ adlRecord.km }}</td>
+                        <td>{{ adlRecord.fuelPercentage }}</td>
+                        <td>{{ adlRecord.tirePressure }}</td>
+                        <td>{{ adlRecord.refrigerantPercentage }}</td>
+                        <td>{{ adlRecord.brakefluidPercentage }}</td>
+                        <td>{{ adlRecord.screenWashPercentage }}</td>
+                        <td>{{ adlRecord.kmHighway }}</td>
+                        <td>{{ adlRecord.kmRoad }}</td>
+                        <td>{{ adlRecord.kmCity }}</td>
+                        <td>{{ adlRecord.temperatureCelsius }}</td>
+                        <td>{{ adlRecord.elektricSeatAdjustments }}</td>
+                        <td>{{ adlRecord.cdSwap }}</td>
+                        <td>{{ adlRecord.chargeCycles }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <p class="noDataText">Ooops! Es konnten keine Einträge gefunden werden...</p>
+    </ng-template>
+</div>
