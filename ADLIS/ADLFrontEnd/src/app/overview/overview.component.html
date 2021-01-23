@@ -9,13 +9,9 @@
 
         <!-- ADL table -->
         <div *ngIf="adlRecords.length > 0; else elseBlock">
-            <h2>Einträge</h2>
+            <h2>FIN: {{ fin }}</h2>
             <table>
                 <tbody>
-                    <tr>
-                        <th>FIN</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.fin }}</td>
-                    </tr>
                     <tr>
                         <th>GPS</th>
                         <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.gps }}</td>
@@ -87,4 +83,5 @@
     <ng-template #elseBlock>
         <p class="noDataText">Ooops! Es konnten keine Einträge gefunden werden...</p>
     </ng-template>
+
 </div>

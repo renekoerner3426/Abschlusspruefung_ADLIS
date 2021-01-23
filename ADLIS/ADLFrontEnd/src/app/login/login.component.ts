@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   userPassword: string ;
   warningVisible: boolean = false;
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

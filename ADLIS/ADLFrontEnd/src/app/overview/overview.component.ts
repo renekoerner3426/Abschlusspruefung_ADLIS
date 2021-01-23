@@ -56,6 +56,7 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getADLRecords();
+    this.getFin();
   }
 
   public getADLRecords() {
@@ -67,5 +68,9 @@ export class OverviewComponent implements OnInit {
     })
     }));
    // this.adlRecords = this.adlRecords.filter((element, i) => i === this.adlRecords.indexOf(element))
+  }
+
+  private getFin() {
+    this.fin = this.adlRecords[0].fin;
   }
 }
