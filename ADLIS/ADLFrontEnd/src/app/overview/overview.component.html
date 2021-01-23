@@ -1,5 +1,3 @@
-
-
 <!-- Main Content -->
 <div class="window">
     <div class="welcomeDiv">
@@ -8,51 +6,79 @@
 
     <!-- ADL -->
     <div class="tableDiv">
-       
+
         <!-- ADL table -->
         <div *ngIf="adlRecords.length > 0; else elseBlock">
             <h2>Einträge</h2>
             <table>
-                <thead>
+                <tbody>
                     <tr>
                         <th>FIN</th>
-                        <th>GPS-Position</th>
-                        <th>Zahl der elektromotorischen Gurtstraffungen</th>
-                        <th>Betriebsstunden der Fahrzeugbeleuchtung</th>
-                        <th>Kilometerstand</th>
-                        <th>Tankfüllung</th>
-                        <th>Reifendruck</th>
-                        <th>Füllstand Kühlmittel</th>
-                        <th>Füllstand Bremsflüssigkeit</th>
-                        <th>Füllstand Wischwasser</th>
-                        <th>Gefahrene Kilometer Autobahn</th>
-                        <th>Gefahrene Kilometer Landstraße</th>
-                        <th>Gefahrene Kilometer Stadt</th>
-                        <th>Temperatur</th>
-                        <th>Zahl der Verstellvorgänge des elektrischen Fahrersitzes</th>
-                        <th>Anzahl der eingelegten Medien des CD-/DVD-Laufwerks</th>
-                        <th>Lade- und Entladezyklen der Starterbatterie</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.fin }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let adlRecord of adlRecords; index as index">
-                        <td>{{ adlRecord.fin }}</td>
-                        <td>{{ adlRecord.gps }}</td>
-                        <td>{{ adlRecord.electromotiveBeltTensionings }}</td>
-                        <td>{{ adlRecord.vehicleIlluminationHours }}</td>
-                        <td>{{ adlRecord.km }}</td>
-                        <td>{{ adlRecord.fuelPercentage }}</td>
-                        <td>{{ adlRecord.tirePressure }}</td>
-                        <td>{{ adlRecord.refrigerantPercentage }}</td>
-                        <td>{{ adlRecord.brakefluidPercentage }}</td>
-                        <td>{{ adlRecord.screenWashPercentage }}</td>
-                        <td>{{ adlRecord.kmHighway }}</td>
-                        <td>{{ adlRecord.kmRoad }}</td>
-                        <td>{{ adlRecord.kmCity }}</td>
-                        <td>{{ adlRecord.temperatureCelsius }}</td>
-                        <td>{{ adlRecord.elektricSeatAdjustments }}</td>
-                        <td>{{ adlRecord.cdSwap }}</td>
-                        <td>{{ adlRecord.chargeCycles }}</td>
+                    <tr>
+                        <th>GPS</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.gps }}</td>
+                    </tr>
+                    <tr>
+                        <th>Gurtstraffungen</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.electromotiveBeltTensionings }}</td>
+                    </tr>
+                    <tr>
+                        <th>Beleuchtung</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.vehicleIlluminationHours }}</td>
+                    </tr>
+                    <tr>
+                        <th>Km</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.km }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tank</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.fuelPercentage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Reifendruck</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.tirePressure }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kühlmittel</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.refrigerantPercentage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Bremsflüssigkeit</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.brakefluidPercentage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Wischwasser</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.screenWashPercentage }}</td>
+                    </tr>
+                    <tr>
+                        <th>Autobahn</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmHighway }}</td>
+                    </tr>
+                    <tr>
+                        <th>Landstraße</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmRoad }}</td>
+                    </tr>
+                    <tr>
+                        <th>Stadt</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmCity }}</td>
+                    </tr>
+                    <tr>
+                        <th>°C</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.temperatureCelsius }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fahrersitzverstellungen (el.)</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.elektricSeatAdjustments }}</td>
+                    </tr>
+                    <tr>
+                        <th>Disc-Wechsler</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.cdSwap }}</td>
+                    </tr>
+                    <tr>
+                        <th>Batteriezyklen</th>
+                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.chargeCycles }}</td>
                     </tr>
                 </tbody>
             </table>
