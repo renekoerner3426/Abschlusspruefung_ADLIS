@@ -12,9 +12,7 @@ public class AccountService {
 	private AccountRepository accountRepository;
 	
 	public boolean checkLoginData(Account account) {
-		//Optional<Account> acc = this.accountRepository.findById(account.getFin());		
-		//return acc != null ? account.getPassword() == acc.get().getPassword() ? true : false : false;
-		System.out.println("checklogindata klapp");
-		return true;
+		Optional<Account> acc = this.accountRepository.findById(account.getFin());		
+		return acc != null ? account.getPassword() == acc.get().getPassword() ? true : false : false;
 	}
 }

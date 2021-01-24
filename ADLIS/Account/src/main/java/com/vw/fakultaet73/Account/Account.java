@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * @author Chris Frömling
- * @author René Körner
+ * @author Chris Froemling
+ * @author Rene Koerner
  * AccountEntity
  */
 @Entity
@@ -19,13 +19,12 @@ public class Account {
 	private String password;
 	
 	public Account(String fin, String password) {
-		super();
 		this.fin = fin;
 		this.password = password;
 	}
 
 	public Account() {
-		super();
+		//for DB only
 	}
 
 	public String getFin() {

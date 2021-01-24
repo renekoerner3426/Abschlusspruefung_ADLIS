@@ -7,30 +7,27 @@ import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vw.fakultaet73.ADLBackEnd.entitites.ADLRecord;
-import com.vw.fakultaet73.ADLBackEnd.services.ADLRecordImportService;
-import com.vw.fakultaet73.ADLBackEnd.services.ExportService;
+import com.vw.fakultaet73.ADLBackEnd.services.ADLRecordService;
 
 @EnableScheduling
 @RestController
+@RequestMapping("/adl-api/v1")
 public class ADLFrontEndController {
 
 	@Autowired
-	private ADLRecordImportService adlRecordImportService;
-
-	@Autowired
-	private ExportService exportService;
-
-	private String dataServiceEnvVar = System.getenv("DATA_SERVICE_IP");
-	private final String GET_URL = "http://" + this.dataServiceEnvVar + ":8080/decrees";
+	private ADLRecordService adlRecordService;
 
 	@CrossOrigin("*")
 	@GetMapping("/adlRecords")
 	@ResponseStatus(HttpStatus.OK)
 	public List<ADLRecord> getAdlRecords() {
-		return this.exportService.getRecordList();
+		return this.adlRecordService.getRecordList();
+		
+		
 	}
 }
