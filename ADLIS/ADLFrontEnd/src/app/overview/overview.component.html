@@ -14,67 +14,67 @@
                 <tbody>
                     <tr>
                         <th>GPS</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.gps }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.gps }}</td>
                     </tr>
                     <tr>
                         <th>Gurtstraffungen</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.electromotiveBeltTensionings }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.electromotiveBeltTensionings }}</td>
                     </tr>
                     <tr>
                         <th>Beleuchtung</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.vehicleIlluminationHours }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.vehicleIlluminationHours }}</td>
                     </tr>
                     <tr>
                         <th>Km</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.km }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.km }}</td>
                     </tr>
                     <tr>
                         <th>Tank</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.fuelPercentage }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.fuelPercentage }}</td>
                     </tr>
                     <tr>
                         <th>Reifendruck</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.tirePressure }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.tirePressure }}</td>
                     </tr>
                     <tr>
                         <th>Kühlmittel</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.refrigerantPercentage }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.refrigerantPercentage }}</td>
                     </tr>
                     <tr>
                         <th>Bremsflüssigkeit</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.brakefluidPercentage }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.brakefluidPercentage }}</td>
                     </tr>
                     <tr>
                         <th>Wischwasser</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.screenWashPercentage }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.screenWashPercentage }}</td>
                     </tr>
                     <tr>
                         <th>Autobahn</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmHighway }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.kmHighway }}</td>
                     </tr>
                     <tr>
                         <th>Landstraße</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmRoad }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.kmRoad }}</td>
                     </tr>
                     <tr>
                         <th>Stadt</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.kmCity }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.kmCity }}</td>
                     </tr>
                     <tr>
                         <th>°C</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.temperatureCelsius }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.temperatureCelsius }}</td>
                     </tr>
                     <tr>
                         <th>Fahrersitzverstellungen (el.)</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.elektricSeatAdjustments }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.elektricSeatAdjustments }}</td>
                     </tr>
                     <tr>
                         <th>Disc-Wechsler</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.cdSwap }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.cdSwap }}</td>
                     </tr>
                     <tr>
                         <th>Batteriezyklen</th>
-                        <td *ngFor="let adlRecord of adlRecords; index as index">{{ adlRecord.chargeCycles }}</td>
+                        <td *ngFor="let adlRecord of adlRecords; let i = index" class="column{{i}}">{{ adlRecord.chargeCycles }}</td>
                     </tr>
                 </tbody>
             </table>

@@ -35,8 +35,16 @@ p {
 
 footer {
     padding: 20px;
-    text-align: center;
     background: #333;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    margin-left: 50px;
 }
 
 
