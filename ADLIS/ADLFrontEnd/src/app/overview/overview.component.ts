@@ -53,6 +53,7 @@ export class OverviewComponent implements OnInit {
   ];
 
   fin: string;
+  column: string;
 
   ngOnInit(): void {
     this.getADLRecords();

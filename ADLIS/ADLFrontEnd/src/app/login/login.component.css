@@ -3,6 +3,7 @@
     justify-content: center;
     max-width: 100%;
     min-height: 300px;
+    margin: 50px;
 }
 
 p {
@@ -34,6 +35,6 @@ button {
         display: block;
     }
     .loginButton {
-        min-width: 300px !important;
+        min-width: 260px !important;
     }
 }

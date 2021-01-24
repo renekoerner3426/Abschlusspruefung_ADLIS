@@ -46,6 +46,10 @@ th {
     position: relative;
 }
 
+.column0:hover {
+    background-color: red;
+}
+
 td:hover::after,
 th:hover::after {
     content: "";
