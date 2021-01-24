@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { PassDataService } from './pass-data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ADLFrontEnd';
+  title = 'ADLFrontEnd'
+  fin: string = "";
+  subscription: Subscription;
 
-  constructor() { 
+  constructor(private ds: PassDataService) {
+    this.subscription = this.ds.getFin().subscribe(x => { 
+      this.fin = x; 
+    });
   }
 
   ngOnInit(): void {
