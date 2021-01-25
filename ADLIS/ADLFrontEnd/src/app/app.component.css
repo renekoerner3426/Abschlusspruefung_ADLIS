@@ -3,12 +3,12 @@
 .header {
     padding: 10px;
     text-align: center;
-    background: #0d4671;
-    color: white;
+    background: #20607e;
+    color: #eaf4f7;
 }
 
 .loginlink {
-    color: white;
+    color: #eaf4f7;
     text-decoration: none;
 }
 

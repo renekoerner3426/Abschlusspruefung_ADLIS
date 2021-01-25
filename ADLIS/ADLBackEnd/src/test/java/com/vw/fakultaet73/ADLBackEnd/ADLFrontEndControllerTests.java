@@ -24,7 +24,7 @@ public class ADLFrontEndControllerTests {
 	
 	@Test
 	public void sendTheCorrectResponseForGetADLRecords() throws Exception {
-	    mvc.perform( MockMvcRequestBuilders
+	    this.mvc.perform( MockMvcRequestBuilders
 	    		.get("/adl-api/v1/adlRecords")
 	    		.accept(MediaType.APPLICATION_JSON))
 	    		.andExpect(MockMvcResultMatchers.status().is(200));
