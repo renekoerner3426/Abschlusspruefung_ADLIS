@@ -22,6 +22,7 @@ public class ADLRecorderApplication {
 	private static void sendPost() throws Exception {
 		ADLRecord adbRecord = new ADLRecordGenerator().generateADLRecord();
 		URL url = new URL("http://localhost:8082/adl-api/v1/saveADL");
+		// URL url = new URL("http://35.224.128.80:8081/adl-api/v1/saveADL");
 		HttpURLConnection con = establishConnection(url);
 
 		StringBuilder jsonBuilder = new StringBuilder();

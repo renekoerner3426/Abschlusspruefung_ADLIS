@@ -1,20 +1,24 @@
-apiVersion: apps/v1
-kind: Cronjob
+apiVersion: batch/v1beta1
+kind: CronJob
 metadata:
   name: adlrecorder
 spec:
-  selector:
-    matchLabels:
-      app: adlrecorder
-  template:
-    metadata:
-      labels:
-        app: adlrecorder
+  schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
     spec:
-      schedule: "*/2 * * * *"
-      containers:
-        - name: adlrecorder
-          image: f73-g1.cloudogu.net/nexus/hektor/adlrecorder
-          ports:
+      template:
+        spec:
+          containers:
+          - name: adlrecorder
+            image: f73-g1.cloudogu.net/nexus/hektor/adl-recorder:latest
+            ports:
             - name: http
               containerPort: 8080
+            env:
+            - name: ADL_BACKEND_IP
+              value: adlbackendservice
+          imagePullSecrets:
+          - name: dockreg
+          restartPolicy: Never

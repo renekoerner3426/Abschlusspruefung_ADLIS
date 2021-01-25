@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: adlbackend
-          image: f73-g2.cloudogu.net/achilles/adlbackend
+          image: f73-g1.cloudogu.net/nexus/hektor/adlbackend:latest
           ports:
             - name: http
               containerPort: 8081
@@ -24,32 +24,31 @@ spec:
             - name: MONGO_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: adl-secret
+                  name: adlis-secret
                   key: username
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: adl-secret
+                  name: adlis-secret
                   key: password
             - name: MONGO_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: adl-secret
+                  name: adlis-secret
                   key: database
             - name: MONGO_HOST
               valueFrom:
                 secretKeyRef:
-                  name: adl-secret
+                  name: adlis-secret
                   key: host
-            - name: DATA_SERVICE_IP
-              value: 10.103.249.73
       imagePullSecrets:
         - name: adlis-secret
+        - name: dockreg
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: adlbackendService
+  name: adlbackendservice
   namespace: default
   labels:
     app: adlbackend
