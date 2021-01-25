@@ -44,7 +44,7 @@ spec:
             - name: DATA_SERVICE_IP
               value: 10.103.249.73
       imagePullSecrets:
-        - name: regcred
+        - name: adlis-secret
 ---
 apiVersion: v1
 kind: Service
