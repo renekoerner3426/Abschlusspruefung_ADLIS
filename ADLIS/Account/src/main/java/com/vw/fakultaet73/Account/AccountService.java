@@ -15,4 +15,8 @@ public class AccountService {
 		Optional<Account> acc = this.accountRepository.findById(account.getFin());		
 		return acc != null ? account.getPassword() == acc.get().getPassword() ? true : false : false;
 	}
+	
+	public Account save(Account account) {
+		return this.accountRepository.save(account);
+	}
 }

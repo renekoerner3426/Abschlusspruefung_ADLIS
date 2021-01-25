@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Cronjob
+metadata:
+  name: adlrecorder
+spec:
+  selector:
+    matchLabels:
+      app: adlrecorder
+  template:
+    metadata:
+      labels:
+        app: adlrecorder
+    spec:
+      schedule: "*/2 * * * *"
+      containers:
+        - name: adlrecorder
+          image: f73-g1.cloudogu.net/nexus/hektor/adlrecorder
+          ports:
+            - name: http
+              containerPort: 8080
