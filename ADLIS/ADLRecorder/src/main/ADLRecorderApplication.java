@@ -8,6 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import main.application.ADLRecord;
+import main.application.ADLRecordGenerator;
+
 public class ADLRecorderApplication {
 
 	public static void main(String[] args) {
