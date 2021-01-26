@@ -16,15 +16,12 @@ spec:
     spec:
       containers:
         - name: adlfrontend
-          image: f73-g2.cloudogu.net/achilles/adlfrontend
+          image: f73-g1.cloudogu.net/nexus/hektor/adlfrontend:latest
           ports:
             - name: http
-              containerPort: 80
-          env:
-            - name: IMPORT-SERVICE-CLUSTERIP
-              value: 34.69.127.37
+              containerPort: 82
       imagePullSecrets:
-        - name: regcred
+        - name: dockreg
 ---
 apiVersion: v1
 kind: Service
@@ -40,5 +37,5 @@ spec:
   ports:
     - protocol: TCP
       name: http
-      port: 80
+      port: 82
       targetPort: 80
